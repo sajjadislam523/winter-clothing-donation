@@ -2,10 +2,13 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { FaEye } from "react-icons/fa";
+import { RiEyeCloseFill } from "react-icons/ri";
 
 const SignUp = () => {
     const { setUser, createNewUser, updateUserProfile } =
         useContext(AuthContext);
+    const [showPass, setShowPass] = useState(false);
     const navigate = useNavigate();
     const [error, setError] = useState("");
 
@@ -107,17 +110,23 @@ const SignUp = () => {
                             required
                         />
                     </div>
-                    <div className="mb-4">
+                    <div className="relative mb-4">
                         <label className="block mb-2 text-sm font-medium">
                             Password
                         </label>
                         <input
-                            type="password"
+                            type={showPass ? "text" : "password"}
                             className="w-full p-2 border rounded"
                             placeholder="Enter your password"
                             name="password"
                             required
                         />
+                        <button
+                            onClick={() => setShowPass(!showPass)}
+                            className="absolute right-4 top-10"
+                        >
+                            {showPass ? <RiEyeCloseFill /> : <FaEye />}
+                        </button>
                     </div>
                     {error && (
                         <p className="mb-4 text-sm text-red-500">{error}</p>

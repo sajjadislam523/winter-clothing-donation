@@ -8,6 +8,11 @@ import sliderImg3 from "../assets/winter-image_3.webp";
 import sliderImg4 from "../assets/winter-image_4.webp";
 import sliderImg5 from "../assets/winter-image_5.webp";
 import sliderImg6 from "../assets/winter-image_6.jpg";
+import { Link } from "react-router-dom";
+import donation from "../assets/donation.png";
+import share from "../assets/share.png";
+import volunteer from "../assets/volunteer.png";
+
 const Home = () => {
     return (
         <div className="min-h-screen bg-blue-50">
@@ -139,64 +144,98 @@ const Home = () => {
                 </Swiper>
             </section>
 
-            <section className="p-8 text-center">
-                <h2 className="text-3xl font-semibold text-gray-700">
+            <section className="p-8 text-center bg-white">
+                <h2 className="text-4xl font-semibold text-gray-700">
                     About Us
                 </h2>
-                <p className="max-w-3xl mx-auto mt-4 text-gray-600">
-                    Our mission is to connect donors with volunteers to provide
-                    warm clothing to those in need across Bangladesh. Together,
-                    we can make a difference this winter.
+                <p className="max-w-3xl mx-auto mt-4 text-lg text-gray-600">
+                    We are a nonprofit organization committed to making winters
+                    warmer for those in need. Our mission is to bridge the gap
+                    between donors and volunteers to ensure that essential
+                    winter clothing reaches the underprivileged across
+                    Bangladesh. Every act of generosity helps us make a
+                    significant difference in someone’s life.
                 </p>
+                <p className="max-w-3xl mx-auto mt-4 text-lg text-gray-600">
+                    Join us on this journey to spread warmth and kindness this
+                    winter. Whether you&apos;re donating, volunteering, or
+                    sharing our cause, your contribution goes a long way in
+                    creating a more compassionate community.
+                </p>
+                <div className="mt-8">
+                    <img
+                        src="https://via.placeholder.com/600x300?text=Winter+Clothing+Campaign"
+                        alt="About Us"
+                        className="object-cover w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+                    />
+                </div>
             </section>
 
             <section className="p-8 bg-blue-100">
-                <h2 className="text-3xl font-semibold text-center text-gray-700">
+                <h2 className="text-4xl font-semibold text-center text-gray-700">
                     How It Works
                 </h2>
-                <div className="flex flex-col justify-center gap-8 mt-8 md:flex-row">
+                <p className="max-w-3xl mx-auto mt-4 text-lg text-center text-gray-600">
+                    Our process is simple and effective, ensuring that every
+                    donation reaches the people who need it the most.
+                    Here&apos;s how you can get involved:
+                </p>
+                <div className="grid gap-12 mt-12 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="text-center">
                         <img
-                            src="https://via.placeholder.com/100?text=Donate"
+                            src={donation}
                             alt="Donate"
-                            className="mx-auto"
+                            className="w-20 mx-auto mb-4"
                         />
-                        <h3 className="mt-4 text-lg font-bold text-gray-700">
+                        <h3 className="text-2xl font-bold text-gray-700">
                             Donate
                         </h3>
-                        <p className="text-gray-600">
-                            Drop off your winter clothes at our collection
-                            points.
+                        <p className="mt-2 text-gray-600">
+                            Bring your gently used or new winter clothes to our
+                            designated collection points. Every item counts in
+                            helping those in need.
                         </p>
                     </div>
 
                     <div className="text-center">
                         <img
-                            src="https://via.placeholder.com/100?text=Volunteer"
+                            src={volunteer}
                             alt="Volunteer"
-                            className="mx-auto"
+                            className="w-20 mx-auto mb-4"
                         />
-                        <h3 className="mt-4 text-lg font-bold text-gray-700">
+                        <h3 className="text-2xl font-bold text-gray-700">
                             Volunteer
                         </h3>
-                        <p className="text-gray-600">
-                            Help distribute donations to communities in need.
+                        <p className="mt-2 text-gray-600">
+                            Join our network of volunteers to help sort,
+                            package, and distribute donations. Your time and
+                            effort make a huge impact.
                         </p>
                     </div>
 
                     <div className="text-center">
                         <img
-                            src="https://via.placeholder.com/100?text=Share"
+                            src={share}
                             alt="Share"
-                            className="mx-auto"
+                            className="w-20 mx-auto mb-4"
                         />
-                        <h3 className="mt-4 text-lg font-bold text-gray-700">
+                        <h3 className="text-2xl font-bold text-gray-700">
                             Share
                         </h3>
-                        <p className="text-gray-600">
-                            Spread the word to encourage more donations.
+                        <p className="mt-2 text-gray-600">
+                            Spread the word about our mission on social media
+                            and encourage your friends and family to
+                            participate. Together, we can achieve more.
                         </p>
                     </div>
+                </div>
+                <div className="mt-12 text-center">
+                    <Link
+                        to="/donation-campaign"
+                        className="px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+                    >
+                        Get Involved
+                    </Link>
                 </div>
             </section>
         </div>
