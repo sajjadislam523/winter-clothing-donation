@@ -13,6 +13,8 @@ import donation from "../assets/donation.png";
 import share from "../assets/share.png";
 import volunteer from "../assets/volunteer.png";
 
+import aboutImg from "../assets/about.jpg";
+
 const Home = () => {
     return (
         <div className="min-h-screen bg-blue-50">
@@ -144,30 +146,36 @@ const Home = () => {
                 </Swiper>
             </section>
 
-            <section className="p-8 text-center bg-white">
-                <h2 className="text-4xl font-semibold text-gray-700">
-                    About Us
-                </h2>
-                <p className="max-w-3xl mx-auto mt-4 text-lg text-gray-600">
-                    We are a nonprofit organization committed to making winters
-                    warmer for those in need. Our mission is to bridge the gap
-                    between donors and volunteers to ensure that essential
-                    winter clothing reaches the underprivileged across
-                    Bangladesh. Every act of generosity helps us make a
-                    significant difference in someone’s life.
-                </p>
-                <p className="max-w-3xl mx-auto mt-4 text-lg text-gray-600">
-                    Join us on this journey to spread warmth and kindness this
-                    winter. Whether you&apos;re donating, volunteering, or
-                    sharing our cause, your contribution goes a long way in
-                    creating a more compassionate community.
-                </p>
-                <div className="mt-8">
+            <section
+                className="relative p-8 text-center bg-white"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
                     <img
-                        src="https://via.placeholder.com/600x300?text=Winter+Clothing+Campaign"
-                        alt="About Us"
-                        className="object-cover w-full max-w-4xl mx-auto rounded-lg shadow-lg"
+                        src={aboutImg}
+                        alt="Winter Clothing Campaign"
+                        className="object-cover w-full h-96"
                     />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                        <div className="text-white">
+                            <h2 className="text-4xl font-semibold">About Us</h2>
+                            <p className="max-w-3xl mx-auto mt-4 text-lg">
+                                We are a nonprofit organization committed to
+                                making winters warmer for those in need. Our
+                                mission is to bridge the gap between donors and
+                                volunteers to ensure essential winter clothing
+                                reaches the underprivileged across Bangladesh.
+                            </p>
+                            <p className="max-w-3xl mx-auto mt-4 text-lg">
+                                Join us on this journey to spread warmth and
+                                kindness this winter. Whether you&apos;re
+                                donating, volunteering, or sharing our cause,
+                                your contribution goes a long way in creating a
+                                more compassionate community.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

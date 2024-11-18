@@ -1,10 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { useLocation } from "react-router-dom";
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState("");
-    const { resetPassword } = useContext(AuthContext);
+    const { resetPassword, loading } = useContext(AuthContext);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state?.email) {
+            setEmail(location.state.email);
+        }
+    }, [location]);
 
     const handleReset = async (e) => {
         e.preventDefault();
@@ -17,6 +25,10 @@ const ForgotPassword = () => {
                 "success"
             );
             setEmail("");
+
+            setTimeout(() => {
+                window.location.href = "https://mail.google.com";
+            }, 2000);
         } catch (err) {
             if (err.code === "auth/user-not-found") {
                 Swal.fire(
@@ -24,6 +36,8 @@ const ForgotPassword = () => {
                     "No user found with this email address.",
                     "error"
                 );
+            } else if (err.code === "auth/invalid-email") {
+                Swal.fire("Error", "Invalid email address format.", "error");
             } else {
                 Swal.fire(
                     "Error",
@@ -59,9 +73,14 @@ const ForgotPassword = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full p-2 text-white bg-blue-500 rounded hover:bg-blue-600"
+                        className={`w-full p-2 text-white bg-blue-500 rounded ${
+                            loading
+                                ? "cursor-not-allowed opacity-75"
+                                : "hover:bg-blue-600"
+                        }`}
+                        disabled={loading}
                     >
-                        Send Password Reset Email
+                        {loading ? "Sending..." : "Send Password Reset Email"}
                     </button>
                 </form>
             </div>

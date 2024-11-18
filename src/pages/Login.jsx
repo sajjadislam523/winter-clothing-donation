@@ -98,12 +98,12 @@ const Login = () => {
                 </div>
                 <div className="mt-4 text-center">
                     Don&apos;t have an account?
-                    <Link
-                        to="/signup"
+                    <button
+                        onClick=""
                         className="text-blue-500 hover:underline"
                     >
                         SignUp
-                    </Link>
+                    </button>
                 </div>
             </div>
         </div>
