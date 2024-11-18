@@ -25,6 +25,18 @@ const Login = () => {
             });
     };
 
+    const handleClick = () => {
+        handleGoogleLogIn()
+            .then((res) => {
+                setUser(res.user);
+                Swal.fire("Success", "Logged in successfully", "success");
+                navigate("/");
+            })
+            .catch((err) => {
+                Swal.fire("Error", err.message, "error");
+            });
+    };
+
     return (
         <div className="flex items-center justify-center h-screen bg-gray-100">
             <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
@@ -54,9 +66,6 @@ const Login = () => {
                             required
                         />
                     </div>
-                    {/* {error && (
-                        <p className="mb-4 text-sm text-red-500">{error}</p>
-                    )} */}
                     <button
                         type="submit"
                         className="w-full px-4 py-2 text-white transition bg-blue-500 rounded hover:bg-blue-600"
@@ -66,7 +75,7 @@ const Login = () => {
                 </form>
                 <button
                     className="w-full px-4 py-2 mt-4 text-white transition bg-red-500 rounded hover:bg-red-600"
-                    onClick={handleGoogleLogIn}
+                    onClick={handleClick}
                 >
                     Login with Google
                 </button>

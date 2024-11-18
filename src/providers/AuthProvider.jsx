@@ -57,6 +57,8 @@ const AuthProvider = ({ children }) => {
         };
     }, []);
 
+    console.log(user);
+
     const authData = {
         user,
         setUser,
@@ -67,7 +69,6 @@ const AuthProvider = ({ children }) => {
         updateUserProfile,
         logOut,
     };
-    console.log(user);
 
     return (
         <AuthContext.Provider value={authData}>{children}</AuthContext.Provider>

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -7,6 +7,7 @@ const SignUp = () => {
     const { setUser, createNewUser, updateUserProfile } =
         useContext(AuthContext);
     const navigate = useNavigate();
+    const [error, setError] = useState("");
 
     const showAlert = () => {
         Swal.fire({
@@ -25,6 +26,19 @@ const SignUp = () => {
         const photoURL = form.get("photoURL");
         const email = form.get("email");
         const password = form.get("password");
+
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters long");
+            return;
+        }
+
+        const passwordConfirmation = /^(?=.*[A-Z])(?=.*[a-z]).*$/;
+        if (!passwordConfirmation.test(password)) {
+            setError(
+                "Password must contain at least one uppercase letter and one lowercase letter"
+            );
+            return;
+        }
 
         createNewUser(email, password)
             .then((res) => {
@@ -105,9 +119,9 @@ const SignUp = () => {
                             required
                         />
                     </div>
-                    {/* {error && (
+                    {error && (
                         <p className="mb-4 text-sm text-red-500">{error}</p>
-                    )} */}
+                    )}
                     <button
                         type="submit"
                         className="w-full px-4 py-2 text-white transition bg-blue-500 rounded hover:bg-blue-600"

@@ -14,14 +14,17 @@ const Navbar = () => {
         </div>
     );
     return (
-        <div className="flex items-center justify-between py-4">
-            <h1>LOGO</h1>
+        <div className="flex items-center justify-between p-4">
+            <div className="flex items-center gap-2">
+                <img src="/favicon.png" alt="" />
+                <h1>Warm Hearts</h1>
+            </div>
             {links}
             <div>
                 {user ? (
                     <div>
                         <img
-                            className="w-10 rounded-full"
+                            className="w-10 h-10 rounded-full"
                             src={user.photoURL}
                             alt=""
                         />
