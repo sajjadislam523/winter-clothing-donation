@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui'
+
+// https://vitejs.dev/config/
 export default {
   content: [
     "./index.html",
@@ -10,6 +13,8 @@ export default {
       'poppins': ['Poppins', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+    daisyui
+  ],
 }
 

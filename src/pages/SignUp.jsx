@@ -4,7 +4,8 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-    const { setUser, createNewUser } = useContext(AuthContext);
+    const { setUser, createNewUser, updateUserProfile } =
+        useContext(AuthContext);
     const navigate = useNavigate();
 
     const showAlert = () => {
@@ -20,7 +21,7 @@ const SignUp = () => {
         e.preventDefault();
 
         const form = new FormData(e.target);
-        const name = form.get("name");
+        const displayName = form.get("displayName");
         const photoURL = form.get("photoURL");
         const email = form.get("email");
         const password = form.get("password");
@@ -28,9 +29,15 @@ const SignUp = () => {
         createNewUser(email, password)
             .then((res) => {
                 const user = res.user;
-                showAlert();
-                setUser(user);
-                navigate("/");
+                return updateUserProfile({
+                    displayName,
+                    photoURL,
+                }).then(() => {
+                    const updatedUser = { ...user, displayName, photoURL };
+                    setUser(updatedUser);
+                    showAlert();
+                    navigate("/");
+                });
             })
             .catch((error) => {
                 console.error(error);
@@ -58,7 +65,7 @@ const SignUp = () => {
                             type="text"
                             className="w-full p-2 border rounded"
                             placeholder="Enter your name"
-                            name="name"
+                            name="displayName"
                             required
                         />
                     </div>

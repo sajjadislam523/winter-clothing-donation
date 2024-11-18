@@ -46,6 +46,16 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
             },
+
+            {
+                path: "/dashboard/update-profile",
+                element: (
+                    <PrivateRoute>
+                        <UpdateProfile />,
+                    </PrivateRoute>
+                ),
+            },
+
             {
                 path: "/login",
                 element: <Login />,
