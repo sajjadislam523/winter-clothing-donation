@@ -4,7 +4,7 @@ This website connects donors with volunteers to provide winter clothing for peop
 
 ## Live Website
 
-You can view the live website here: [Winter Clothing Donation Website](https://app-gadget-heaven.netlify.app/)
+You can view the live website here: [Winter Clothing Donation Website](https://winter-donation-8b808.web.app/)
 
 ## Features
 
@@ -22,4 +22,4 @@ You can view the live website here: [Winter Clothing Donation Website](https://a
 
 -   **Frontend**: React.js, Tailwind CSS, DaisyUI, Animate.css and AOS
 -   **Backend**: Firebase (for authentication)
--   **Deployment**: Netlify, Surge, or Firebase hosting
+-   **Deployment**: Firebase hosting

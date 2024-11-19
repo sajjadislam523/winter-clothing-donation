@@ -26,8 +26,8 @@ const Navbar = () => {
             <NavLink className={linkClass} to="/dashboard">
                 Dashboard
             </NavLink>
-            <NavLink className={linkClass} to="/success-stories">
-                Stories
+            <NavLink className={linkClass} to="/annual-report">
+                Reports
             </NavLink>
             <NavLink className={linkClass} to="/upcoming-events">
                 Events

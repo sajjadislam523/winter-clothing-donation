@@ -11,8 +11,8 @@ import HowToHelp from "../pages/HowToHelp";
 import Dashboard from "../pages/Dashboard";
 import ForgotPassword from "../pages/ForgotPassword";
 import UpdateProfile from "../pages/UpdateProfile";
-import SuccessStories from "../pages/SuccessStories";
 import UpcomingEvents from "../pages/UpcomingEvents";
+import AnnualReport from "../pages/AnnualReport";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: "/donation-campaign",
                 element: <DonationCampaigns />,
-                loader: () => fetch("./data.json"),
+                loader: () => fetch("./data.json").then((res) => res.json()),
             },
             {
                 path: "/donation-campaign/:id",
@@ -80,12 +80,12 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/success-stories",
-                element: <SuccessStories />,
-            },
-            {
                 path: "/upcoming-events",
                 element: <UpcomingEvents />,
+            },
+            {
+                path: "/annual-report",
+                element: <AnnualReport />,
             },
         ],
     },
