@@ -18,13 +18,19 @@ const Navbar = () => {
                 Home
             </NavLink>
             <NavLink className={linkClass} to="/donation-campaign">
-                Donation Campaigns
+                Campaigns
             </NavLink>
             <NavLink className={linkClass} to="/how-to-help">
                 How to Help
             </NavLink>
             <NavLink className={linkClass} to="/dashboard">
                 Dashboard
+            </NavLink>
+            <NavLink className={linkClass} to="/success-stories">
+                Stories
+            </NavLink>
+            <NavLink className={linkClass} to="/upcoming-events">
+                Events
             </NavLink>
         </div>
     );

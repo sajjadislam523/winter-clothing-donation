@@ -4,86 +4,87 @@ import {
     FaInstagram,
     FaLinkedin,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="py-8 text-white bg-gradient-to-r from-blue-500 to-cyan-600">
-            <div className="max-w-6xl px-4 mx-auto">
-                {/* Contact Information */}
-                <div className="grid grid-cols-1 gap-8 mb-8 md:grid-cols-3">
+        <footer className="py-10 text-white bg-gradient-to-br from-blue-700 via-blue-500 to-cyan-400">
+            <div className="max-w-6xl px-6 mx-auto">
+                <div className="flex flex-col gap-8 mb-8 md:flex-row md:justify-between md:items-center">
                     <div className="space-y-4">
-                        <h2 className="text-2xl font-semibold">Contact Us</h2>
-                        <p className="text-lg">
-                            Email: contact@winterdonate.org
-                        </p>
-                        <p className="text-lg">Phone: +880 123 456 789</p>
-                        <p className="text-lg">Address: Dhaka, Bangladesh</p>
+                        <h2 className="text-xl font-semibold sm:text-2xl lg:text-3xl">
+                            Contact Us
+                        </h2>
+                        <ul className="space-y-2">
+                            <li className="text-base transition sm:text-lg hover:text-blue-300">
+                                Email:{" "}
+                                <a
+                                    href="mailto:contact@winterdonate.org"
+                                    className="underline"
+                                >
+                                    contact@winterdonate.org
+                                </a>
+                            </li>
+                            <li className="text-base transition sm:text-lg hover:text-blue-300">
+                                Phone:{" "}
+                                <a
+                                    href="tel:+880123456789"
+                                    className="underline"
+                                >
+                                    +880 123 456 789
+                                </a>
+                            </li>
+                            <li className="text-base transition sm:text-lg hover:text-blue-300">
+                                Address: Dhaka, Bangladesh
+                            </li>
+                        </ul>
                     </div>
 
-                    {/* Social Media Links */}
-                    <div className="space-y-4 text-center md:text-left">
-                        <h2 className="text-2xl font-semibold">Follow Us</h2>
+                    <div className="space-y-4">
+                        <h2 className="text-xl font-semibold sm:text-2xl lg:text-3xl">
+                            Follow Us
+                        </h2>
                         <div className="flex justify-center gap-6 md:justify-start">
-                            <a
-                                href="https://www.facebook.com"
+                            <Link
+                                to="https://www.facebook.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xl hover:text-blue-500"
+                                className="text-2xl transition transform hover:scale-110 hover:text-blue-300"
                             >
                                 <FaFacebookF />
-                            </a>
-                            <a
-                                href="https://www.twitter.com"
+                            </Link>
+                            <Link
+                                to="https://www.twitter.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xl hover:text-blue-400"
+                                className="text-2xl transition transform hover:scale-110 hover:text-blue-300"
                             >
                                 <FaTwitter />
-                            </a>
-                            <a
-                                href="https://www.instagram.com"
+                            </Link>
+                            <Link
+                                to="https://www.instagram.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xl hover:text-pink-500"
+                                className="text-2xl transition transform hover:scale-110 hover:text-pink-300"
                             >
                                 <FaInstagram />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com"
+                            </Link>
+                            <Link
+                                to="https://www.linkedin.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xl hover:text-blue-700"
+                                className="text-2xl transition transform hover:scale-110 hover:text-blue-300"
                             >
                                 <FaLinkedin />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Newsletter or Extra Section (Optional) */}
-                    <div className="space-y-4">
-                        <h2 className="text-2xl font-semibold">Stay Updated</h2>
-                        <p className="text-lg">
-                            Subscribe to our newsletter to get the latest
-                            updates on donations and events.
-                        </p>
-                        <div className="flex items-center gap-4">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="p-2 text-black border border-gray-400 rounded-lg"
-                            />
-                            <button className="px-4 py-2 text-white transition duration-300 bg-green-500 rounded-lg hover:bg-green-600">
-                                Subscribe
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
 
-                {/* Copyright Notice */}
-                <div className="pt-4 mt-8 text-sm text-center border-t border-gray-700">
-                    <p>
-                        &copy; 2024 Winter Clothing Donation. All rights
-                        reserved.
+                <div className="pt-6 mt-8 text-sm text-center border-t border-blue-200">
+                    <p className="text-xs sm:text-sm lg:text-base">
+                        &copy; {new Date().getFullYear()} Winter Clothing
+                        Donation. All rights reserved.
                     </p>
                 </div>
             </div>

@@ -11,6 +11,8 @@ import HowToHelp from "../pages/HowToHelp";
 import Dashboard from "../pages/Dashboard";
 import ForgotPassword from "../pages/ForgotPassword";
 import UpdateProfile from "../pages/UpdateProfile";
+import SuccessStories from "../pages/SuccessStories";
+import UpcomingEvents from "../pages/UpcomingEvents";
 
 const router = createBrowserRouter([
     {
@@ -76,6 +78,14 @@ const router = createBrowserRouter([
                         <UpdateProfile />
                     </PrivateRoute>
                 ),
+            },
+            {
+                path: "/success-stories",
+                element: <SuccessStories />,
+            },
+            {
+                path: "/upcoming-events",
+                element: <UpcomingEvents />,
             },
         ],
     },
