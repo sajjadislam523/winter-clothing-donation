@@ -8,7 +8,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'help-bg': "url('./src/assets/how-to-help.jpg')",
+      },
+    },
     fontFamily: {
       'poppins': ['Poppins', 'sans-serif'],
     },

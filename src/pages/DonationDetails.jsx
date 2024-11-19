@@ -93,7 +93,7 @@ const DonationDetails = () => {
                     <div>
                         <button
                             type="submit"
-                            className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+                            className="px-4 py-2 text-white bg-blue-600 rounded-lg  hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
                         >
                             Submit Donation
                         </button>
