@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye } from "react-icons/fa";
 import { RiEyeCloseFill } from "react-icons/ri";
+import { sendEmailVerification } from "firebase/auth";
 
 const SignUp = () => {
     const { setUser, createNewUser, updateUserProfile } =
@@ -46,6 +47,26 @@ const SignUp = () => {
         createNewUser(email, password)
             .then((res) => {
                 const user = res.user;
+
+                sendEmailVerification(user)
+                    .then(() => {
+                        Swal.fire({
+                            title: "Success!",
+                            text: "Account created successfully! Please verify your email before logging in.",
+                            icon: "success",
+                            confirmButtonText: "Close",
+                        });
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Failed to send email verification.",
+                            icon: "error",
+                            confirmButtonText: "Close",
+                        });
+                    });
+
                 return updateUserProfile({
                     displayName,
                     photoURL,
