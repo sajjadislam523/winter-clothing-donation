@@ -9,9 +9,6 @@ export default {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'help-bg': "url('./how-to-help.jpg')",
-      },
     },
     fontFamily: {
       'poppins': ['Poppins', 'sans-serif'],

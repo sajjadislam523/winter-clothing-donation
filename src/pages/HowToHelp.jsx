@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
 import "animate.css";
+import helpBg from "../assets/how-to-help.jpg";
 
 const HowToHelp = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             <div className="max-w-screen-lg mx-auto">
-                <section className="relative bg-help-bg flex rounded-lg flex-col items-center justify-center min-h-[300px] text-center bg-cover bg-center text-white animate__animated animate__fadeIn">
+                <section className="relative flex rounded-lg flex-col items-center justify-center min-h-[300px] text-center  text-white animate__animated animate__fadeIn">
+                    <img
+                        src={helpBg}
+                        className="object-cover w-full h-full rounded-lg"
+                        alt=""
+                    />
                     <div className="absolute inset-0 rounded-lg bg-black/50"></div>
-                    <div className="relative z-10 w-full max-w-4xl px-4">
+                    <div className="absolute z-10 w-full max-w-4xl px-4">
                         <h1 className="text-4xl font-bold sm:text-5xl">
                             How to Help
                         </h1>

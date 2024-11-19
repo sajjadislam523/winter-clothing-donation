@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ResetPassword = () => {
     const { resetPassword } = useContext(AuthContext);
@@ -40,19 +41,19 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="flex items-center justify-center h-screen bg-gray-100">
-            <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
-                <h2 className="mb-4 text-2xl font-bold text-center">
+        <div className="flex items-center justify-center min-h-screen py-8 bg-gray-100">
+            <div className="w-full max-w-md p-8 bg-white border border-gray-300 shadow-lg rounded-xl">
+                <h2 className="mb-6 text-3xl font-bold text-center text-gray-800">
                     Reset Password
                 </h2>
                 <form onSubmit={handlePasswordReset}>
-                    <div className="mb-4">
-                        <label className="block mb-2 text-sm font-medium">
+                    <div className="mb-6">
+                        <label className="block mb-2 text-sm font-medium text-gray-700">
                             Email
                         </label>
                         <input
                             type="email"
-                            className="w-full p-2 border rounded"
+                            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             placeholder="Enter your email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -61,11 +62,16 @@ const ResetPassword = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full px-4 py-2 text-white transition bg-blue-500 rounded hover:bg-blue-600"
+                        className="w-full px-4 py-2 text-white transition bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none"
                     >
                         Send Reset Email
                     </button>
                 </form>
+                <div className="mt-4 text-center">
+                    <Link to="/login" className="text-blue-500 hover:underline">
+                        Back to Login
+                    </Link>
+                </div>
             </div>
         </div>
     );
