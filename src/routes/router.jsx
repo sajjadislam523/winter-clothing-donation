@@ -34,7 +34,6 @@ const router = createBrowserRouter([
                         <DonationDetails />
                     </PrivateRoute>
                 ),
-                loader: () => fetch("./data.json"),
             },
             {
                 path: "/how-to-help",

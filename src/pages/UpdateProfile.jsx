@@ -31,31 +31,31 @@ const UpdateProfile = () => {
     };
 
     return (
-        <div className="flex items-center justify-center h-screen bg-gray-100">
-            <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
-                <h2 className="mb-4 text-2xl font-bold text-center">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-50 to-blue-100">
+            <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-xl">
+                <h2 className="mb-6 text-3xl font-bold text-center text-blue-600">
                     Update Profile
                 </h2>
                 <form onSubmit={handleUpdateProfile}>
-                    <div className="mb-4">
-                        <label className="block mb-2 text-sm font-medium">
+                    <div className="mb-6">
+                        <label className="block mb-2 text-sm font-semibold text-gray-700">
                             Display Name
                         </label>
                         <input
                             type="text"
-                            className="w-full p-2 border rounded"
+                            className="w-full px-4 py-2 text-gray-800 transition duration-300 border border-blue-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter your display name"
                             value={displayName}
                             onChange={(e) => setDisplayName(e.target.value)}
                         />
                     </div>
-                    <div className="mb-4">
-                        <label className="block mb-2 text-sm font-medium">
+                    <div className="mb-6">
+                        <label className="block mb-2 text-sm font-semibold text-gray-700">
                             Photo URL
                         </label>
                         <input
                             type="text"
-                            className="w-full p-2 border rounded"
+                            className="w-full px-4 py-2 text-gray-800 transition duration-300 border border-blue-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                             placeholder="Enter your photo URL"
                             value={photoURL}
                             onChange={(e) => setPhotoURL(e.target.value)}
@@ -63,7 +63,7 @@ const UpdateProfile = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full px-4 py-2 text-white transition bg-blue-500 rounded hover:bg-blue-600"
+                        className="w-full px-6 py-3 text-lg font-medium text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 hover:-translate-y-1"
                     >
                         Update Profile
                     </button>

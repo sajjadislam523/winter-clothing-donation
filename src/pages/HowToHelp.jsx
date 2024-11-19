@@ -5,7 +5,6 @@ const HowToHelp = () => {
     return (
         <div className="min-h-screen bg-gray-50">
             <div className="max-w-screen-lg mx-auto">
-                {/* Introduction Section */}
                 <section className="relative bg-help-bg flex rounded-lg flex-col items-center justify-center min-h-[300px] text-center bg-cover bg-center text-white animate__animated animate__fadeIn">
                     <div className="absolute inset-0 rounded-lg bg-black/50"></div>
                     <div className="relative z-10 w-full max-w-4xl px-4">
@@ -19,7 +18,6 @@ const HowToHelp = () => {
                     </div>
                 </section>
 
-                {/* Ways to Help Section */}
                 <section className="grid gap-8 p-8 mb-12 sm:grid-cols-2 lg:grid-cols-3 animate__animated animate__fadeInUp animate__delay-1s">
                     <div className="p-6 bg-white rounded-lg shadow-lg">
                         <h2 className="text-lg font-semibold text-blue-700 sm:text-xl">
@@ -50,7 +48,6 @@ const HowToHelp = () => {
                     </div>
                 </section>
 
-                {/* Get Involved Section */}
                 <section className="mb-12 text-center animate__animated animate__fadeIn animate__delay-1s">
                     <h2 className="text-2xl font-bold text-blue-700 sm:text-3xl">
                         Get Involved
@@ -66,7 +63,6 @@ const HowToHelp = () => {
                     </Link>
                 </section>
 
-                {/* FAQs Section */}
                 <section className="px-4 mb-12 animate__animated animate__fadeInUp animate__delay-2s">
                     <h2 className="text-2xl font-bold text-blue-700 sm:text-3xl">
                         Frequently Asked Questions
@@ -93,7 +89,6 @@ const HowToHelp = () => {
                     </div>
                 </section>
 
-                {/* Contact Section */}
                 <section className="p-8 text-center animate__animated animate__fadeInUp animate__delay-3s">
                     <h2 className="text-2xl font-bold text-blue-700 sm:text-3xl">
                         Contact Us

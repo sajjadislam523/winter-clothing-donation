@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'help-bg': "url('./src/assets/how-to-help.jpg')",
+        'help-bg': "url('./how-to-help.jpg')",
       },
     },
     fontFamily: {
