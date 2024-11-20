@@ -5,7 +5,7 @@
         "image": "https://i.ibb.co.com/VQRb6g3/rangpur.jpg",
         "description": "Help us distribute warm jackets to vulnerable families in Rangpur during the winter season.",
         "status": "Active",
-        "contactInfo": "rangpur@donation.org, +880123456789",
+        "contactInfo": "Email: rangpur@donationcampaign.org | Phone: +8801711111111",
         "division": "Rangpur"
     },
     {
@@ -13,8 +13,8 @@
         "title": "Blankets for Sylhet Villages",
         "image": "https://i.ibb.co.com/d75Sdfq/sylhet.jpg",
         "description": "Join our efforts to provide blankets to people in remote villages of Sylhet to stay warm.",
-        "status": "Active",
-        "contactInfo": "sylhet@donation.org, +880987654321",
+        "status": "Upcoming",
+        "contactInfo": "Email: sylhet@donationcampaign.org | Phone: +8801722222222",
         "division": "Sylhet"
     },
     {
@@ -23,7 +23,7 @@
         "image": "https://i.ibb.co.com/R2H25C2/blankets-appeal.jpg",
         "description": "We aim to collect sweaters for underprivileged children in Dhaka to help them fight the cold.",
         "status": "Active",
-        "contactInfo": "dhaka@donation.org, +8801122334455",
+        "contactInfo": "Email: dhaka@donationcampaign.org | Phone: +8801733333333",
         "division": "Dhaka"
     },
     {
@@ -31,8 +31,8 @@
         "title": "Winter Aid for Chattogram Hills",
         "image": "https://i.ibb.co.com/0tKknp9/chittagong.jpg",
         "description": "Support communities in the Chattogram Hill Tracts with winter clothing and essentials.",
-        "status": "Active",
-        "contactInfo": "chattogram@donation.org, +8809988776655",
+        "status": "Upcoming",
+        "contactInfo": "Email: chattogram@donationcampaign.org | Phone: +8801744444444",
         "division": "Chattogram"
     },
     {
@@ -41,7 +41,7 @@
         "image": "https://i.ibb.co.com/vwTH7Cg/winter-clothes.jpg",
         "description": "Provide warm clothes to fishermen and their families in Barishal to withstand cold mornings.",
         "status": "Active",
-        "contactInfo": "barishal@donation.org, +8807766554433",
+        "contactInfo": "Email: barishal@donationcampaign.org | Phone: +8801755555555",
         "division": "Barishal"
     },
     {
@@ -49,8 +49,8 @@
         "title": "Woolen Scarves for Mymensingh",
         "image": "https://i.ibb.co.com/KyzQdJq/elder.jpg",
         "description": "Distribute woolen scarves to protect the elderly in Mymensingh from chilly winds.",
-        "status": "Active",
-        "contactInfo": "mymensingh@donation.org, +8806655443322",
+        "status": "Upcoming",
+        "contactInfo": "Email: mymensingh@donationcampaign.org | Phone: +8801766666666",
         "division": "Mymensingh"
     },
     {
@@ -59,7 +59,7 @@
         "image": "https://i.ibb.co.com/GTHhpY0/childrens.webp",
         "description": "Donate clothes to homeless people in Khulna to shield them from the winter chill.",
         "status": "Active",
-        "contactInfo": "khulna@donation.org, +8803344556677",
+        "contactInfo": "Email: khulna@donationcampaign.org | Phone: +8801777777777",
         "division": "Khulna"
     },
     {
@@ -67,26 +67,26 @@
         "title": "Cozy Beanies for Rajshahi Farmers",
         "image": "https://i.ibb.co.com/YWFcBZ4/elders.jpg",
         "description": "Support Rajshahi farmers with cozy beanies to keep them warm during early morning farming.",
-        "status": "Active",
-        "contactInfo": "rajshahi@donation.org, +8804455667788",
+        "status": "Upcoming",
+        "contactInfo": "Email: rajshahi@donationcampaign.org | Phone: +8801788888888",
         "division": "Rajshahi"
     },
     {
         "id": 9,
-        "title": "Thermal Wear for Gazipur Workers",
+        "title": "Thermal Wear for Chittagong Workers",
         "image": "https://i.ibb.co.com/VLM4cWQ/cox-bazar.webp",
-        "description": "Distribute thermal wear to factory workers in Gazipur to help them combat freezing conditions.",
+        "description": "Distribute thermal wear to factory workers in Chittagong to help them combat freezing conditions.",
         "status": "Active",
-        "contactInfo": "gazipur@donation.org, +8805544332211",
-        "division": "Gazipur"
+        "contactInfo": "Email: chittagong@donationcampaign.org | Phone: +8801799999999",
+        "division": "Chittagong"
     },
     {
         "id": 10,
-        "title": "Winter Relief for Rural Comilla",
+        "title": "Winter Relief for Rural Dhaka",
         "image": "https://i.ibb.co.com/r5zZsM7/rohinga.jpg",
-        "description": "Provide winter relief items to rural communities in Comilla to ensure their safety and warmth.",
-        "status": "Active",
-        "contactInfo": "comilla@donation.org, +8806677889900",
-        "division": "Comilla"
+        "description": "Provide winter relief items to rural communities in Dhaka to ensure their safety and warmth.",
+        "status": "Upcoming",
+        "contactInfo": "Email: dhaka@donationcampaign.org | Phone: +8801800000000",
+        "division": "Dhaka"
     }
 ]

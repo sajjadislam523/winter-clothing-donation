@@ -393,20 +393,20 @@ const Home = () => {
             >
                 <div className="container px-4 mx-auto max-w-7xl">
                     <h2
-                        className="text-4xl font-bold text-center text-gray-800 sm:text-5xl"
+                        className="max-w-full overflow-hidden text-3xl font-bold text-center text-gray-800 sm:text-4xl"
                         data-aos="fade-right"
                         data-aos-duration="1000"
                     >
                         Annual Report 2024
                     </h2>
                     <p
-                        className="mt-4 text-center text-gray-600"
+                        className="max-w-full mt-4 overflow-hidden text-center text-gray-600"
                         data-aos="fade-left"
                         data-aos-duration="1000"
                         data-aos-delay="200"
                     >
-                        A glimpse of the incredible journey we’ve had this year
-                        in making a difference.
+                        A glimpse of the incredible journey we&apos;ve had this
+                        year in making a difference.
                     </p>
 
                     <div
