@@ -13,7 +13,7 @@ const Navbar = () => {
         }`;
 
     const links = (
-        <div className="flex flex-col items-center gap-4 text-sm md:flex-row">
+        <div className="flex flex-col items-center gap-4 text-base md:flex-row">
             <NavLink className={linkClass} to="/">
                 Home
             </NavLink>

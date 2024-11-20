@@ -4,7 +4,6 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye } from "react-icons/fa";
 import { RiEyeCloseFill } from "react-icons/ri";
-import { sendEmailVerification } from "firebase/auth";
 
 const SignUp = () => {
     const { setUser, createNewUser, updateUserProfile } =
@@ -12,15 +11,6 @@ const SignUp = () => {
     const [showPass, setShowPass] = useState(false);
     const navigate = useNavigate();
     const [error, setError] = useState("");
-
-    const showAlert = () => {
-        Swal.fire({
-            title: "Congratulations!",
-            text: "You have successfully signed up",
-            icon: "success",
-            confirmButtonText: "Close",
-        });
-    };
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -47,38 +37,32 @@ const SignUp = () => {
         createNewUser(email, password)
             .then((res) => {
                 const user = res.user;
+                Swal.fire({
+                    title: "Success!",
+                    text: "Account created successfully!",
+                    icon: "success",
+                    confirmButtonText: "Close",
+                });
 
-                sendEmailVerification(user)
+                updateUserProfile({
+                    displayName,
+                    photoURL,
+                })
                     .then(() => {
-                        Swal.fire({
-                            title: "Success!",
-                            text: "Account created successfully! Please verify your email before logging in.",
-                            icon: "success",
-                            confirmButtonText: "Close",
-                        });
+                        const updatedUser = { ...user, displayName, photoURL };
+                        setUser(updatedUser);
+                        navigate("/");
                     })
-                    .catch((err) => {
-                        console.error(err);
+                    .catch((profileError) => {
                         Swal.fire({
                             title: "Error!",
-                            text: "Failed to send email verification.",
+                            text: profileError.message,
                             icon: "error",
                             confirmButtonText: "Close",
                         });
                     });
-
-                return updateUserProfile({
-                    displayName,
-                    photoURL,
-                }).then(() => {
-                    const updatedUser = { ...user, displayName, photoURL };
-                    setUser(updatedUser);
-                    showAlert();
-                    navigate("/");
-                });
             })
             .catch((error) => {
-                console.error(error);
                 Swal.fire({
                     title: "Error!",
                     text: error.message,
@@ -95,7 +79,6 @@ const SignUp = () => {
                     Register
                 </h2>
                 <form onSubmit={handleRegister}>
-                    {/* Name Input */}
                     <div className="mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-700">
                             Name
@@ -109,7 +92,6 @@ const SignUp = () => {
                         />
                     </div>
 
-                    {/* Email Input */}
                     <div className="mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-700">
                             Email
@@ -123,7 +105,6 @@ const SignUp = () => {
                         />
                     </div>
 
-                    {/* Photo URL Input */}
                     <div className="mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-700">
                             Photo URL
@@ -132,12 +113,11 @@ const SignUp = () => {
                             type="text"
                             className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             placeholder="Enter your photo URL"
-                            name="photo-url"
+                            name="photoURL"
                             required
                         />
                     </div>
 
-                    {/* Password Input */}
                     <div className="relative mb-6">
                         <label className="block mb-2 text-sm font-medium text-gray-700">
                             Password
@@ -161,12 +141,10 @@ const SignUp = () => {
                         </button>
                     </div>
 
-                    {/* Error Message */}
                     {error && (
                         <p className="mb-4 text-sm text-red-500">{error}</p>
                     )}
 
-                    {/* Register Button */}
                     <button
                         type="submit"
                         className="w-full px-4 py-2 text-white transition bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none"
@@ -175,7 +153,6 @@ const SignUp = () => {
                     </button>
                 </form>
 
-                {/* Login Redirect */}
                 <div className="mt-4 text-center">
                     Already have an account?{" "}
                     <Link to="/login" className="text-blue-500 hover:underline">

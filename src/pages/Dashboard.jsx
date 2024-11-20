@@ -8,7 +8,6 @@ const Dashboard = () => {
         <div className="min-h-screen bg-center bg-cover bg-gradient-to-b from-blue-100 to-white">
             <div className="w-full px-4 py-8">
                 <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg">
-                    {/* Header Section */}
                     <div className="relative flex flex-col items-center justify-center p-8 rounded-t-lg bg-gradient-to-r from-blue-300 to-blue-200">
                         {user?.photoURL ? (
                             <img
@@ -31,7 +30,6 @@ const Dashboard = () => {
                         </p>
                     </div>
 
-                    {/* User Info Section */}
                     <div className="p-6 space-y-6">
                         <div className="flex items-center justify-between p-4 rounded-lg shadow-inner bg-blue-50">
                             <p className="text-lg font-medium text-gray-800">
