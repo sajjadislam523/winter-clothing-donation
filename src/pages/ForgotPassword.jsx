@@ -1,12 +1,10 @@
-import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const ResetPassword = () => {
-    const { resetPassword } = useContext(AuthContext);
-    const [email, setEmail] = useState("");
+    const { resetPassword, email } = useContext(AuthContext);
 
     const handlePasswordReset = (e) => {
         e.preventDefault();
@@ -28,6 +26,7 @@ const ResetPassword = () => {
                     icon: "success",
                     confirmButtonText: "Close",
                 });
+                window.open("https://mail.google.com", "_blank");
             })
             .catch((err) => {
                 console.error(err);
@@ -56,7 +55,6 @@ const ResetPassword = () => {
                             className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
                             placeholder="Enter your email"
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                     </div>

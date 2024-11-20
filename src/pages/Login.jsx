@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -6,9 +6,12 @@ import { FaEye, FaGoogle } from "react-icons/fa";
 import { RiEyeCloseFill } from "react-icons/ri";
 
 const Login = () => {
-    const { logIn, setUser, handleGoogleLogIn } = useContext(AuthContext);
+    const { logIn, setUser, handleGoogleLogIn, setEmail } =
+        useContext(AuthContext);
     const navigate = useNavigate();
     const [showPass, setShowPass] = useState(false);
+
+    const emailRef = useRef();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -40,6 +43,22 @@ const Login = () => {
             });
     };
 
+    const handleForgotPassword = () => {
+        const emailValue = emailRef.current.value;
+
+        if (!emailValue) {
+            Swal.fire({
+                title: "Error!",
+                text: "Please enter your email before resetting your password.",
+                icon: "error",
+                confirmButtonText: "Close",
+            });
+            return;
+        }
+        setEmail(emailValue);
+        navigate("/forgot-password");
+    };
+
     return (
         <div className="flex items-center justify-center min-h-screen">
             <div className="w-full max-w-md p-8 bg-white border border-gray-300 shadow-2xl rounded-xl">
@@ -57,6 +76,7 @@ const Login = () => {
                             placeholder="Enter your email"
                             name="email"
                             required
+                            ref={emailRef}
                         />
                     </div>
                     <div className="relative mb-6">
@@ -95,12 +115,12 @@ const Login = () => {
                     <FaGoogle className="mr-3" size={20} /> Login with Google
                 </button>
                 <div className="mt-4 text-center">
-                    <Link
-                        to="/forgot-password"
+                    <button
+                        onClick={handleForgotPassword}
                         className="text-blue-500 hover:underline"
                     >
                         Forgot Password?
-                    </Link>
+                    </button>
                 </div>
                 <div className="mt-4 text-center">
                     Don&apos;t have an account?
