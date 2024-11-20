@@ -11,8 +11,6 @@ import HowToHelp from "../pages/HowToHelp";
 import Dashboard from "../pages/Dashboard";
 import ForgotPassword from "../pages/ForgotPassword";
 import UpdateProfile from "../pages/UpdateProfile";
-import UpcomingEvents from "../pages/UpcomingEvents";
-import AnnualReport from "../pages/AnnualReport";
 
 const router = createBrowserRouter([
     {
@@ -78,14 +76,6 @@ const router = createBrowserRouter([
                         <UpdateProfile />
                     </PrivateRoute>
                 ),
-            },
-            {
-                path: "/upcoming-events",
-                element: <UpcomingEvents />,
-            },
-            {
-                path: "/annual-report",
-                element: <AnnualReport />,
             },
         ],
     },

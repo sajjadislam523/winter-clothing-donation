@@ -14,6 +14,16 @@ import sliderImg4 from "../assets/winter-image_4.webp";
 import sliderImg5 from "../assets/winter-image_5.webp";
 import sliderImg6 from "../assets/winter-image_6.jpg";
 
+import firstImage from "../assets/event/first.jpg";
+import secondImage from "../assets/event/second.jpg";
+import thirdImage from "../assets/event/third.jpg";
+
+import Swal from "sweetalert2";
+
+import dhakaImg from "../assets/annual-report/dhaka.jpg";
+import ctgImg from "../assets/annual-report/chittagong.jpg";
+import rajshahiImg from "../assets/annual-report/rajshahi.jpg";
+
 const sliderData = [
     {
         image: sliderImg1,
@@ -53,7 +63,51 @@ const sliderData = [
     },
 ];
 
+// events data
+const eventsData = [
+    {
+        id: 1,
+        title: "Warmth for All: Distribution Event",
+        date: "December 12, 2024",
+        time: "9:00 AM",
+        location: "Barisal Riverfront Park",
+        description:
+            "Join us as we distribute donated winter clothing to families in need. Volunteers are welcome to assist with the distribution process.",
+        image: firstImage,
+    },
+    {
+        id: 2,
+        title: "Community Donation Drive",
+        date: "December 18, 2024",
+        time: "11:00 AM",
+        location: "Rangpur City Square",
+        description:
+            "A community event where donors can drop off winter clothing and enjoy a day of food stalls, music, and fun activities.",
+        image: secondImage,
+    },
+    {
+        id: 3,
+        title: "Holiday Hope: Fundraising Concert",
+        date: "December 24, 2024",
+        time: "7:00 PM",
+        location: "Khulna Cultural Center",
+        description:
+            "An evening of music and performances to raise funds for our winter clothing campaign. Tickets available online and at the venue.",
+        image: thirdImage,
+    },
+];
+
 const Home = () => {
+    const handleRegister = (title) => {
+        Swal.fire({
+            title: "Registration Successful!",
+            text: `You have successfully registered for "${title}".`,
+            icon: "success",
+            confirmButtonText: "OK",
+            confirmButtonColor: "#3085d6",
+        });
+    };
+
     return (
         <div className="min-h-screen bg-blue-50">
             <section
@@ -231,6 +285,257 @@ const Home = () => {
                     >
                         Get Involved
                     </Link>
+                </div>
+            </section>
+
+            {/* Upcoming events */}
+            <section
+                className="py-16 bg-gray-50"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+                <div className="container px-4 mx-auto max-w-7xl">
+                    <h2
+                        className="text-3xl font-bold text-center text-gray-800 sm:text-4xl"
+                        data-aos="fade-right"
+                        data-aos-duration="1000"
+                    >
+                        Upcoming Events
+                    </h2>
+                    <p
+                        className="my-8 text-center text-gray-600"
+                        data-aos="fade-left"
+                        data-aos-duration="1000"
+                        data-aos-delay="200"
+                    >
+                        Join us in making a difference. Check out our upcoming
+                        events and register to participate.
+                    </p>
+                    <div
+                        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-delay="400"
+                    >
+                        {eventsData.map((event) => (
+                            <div
+                                key={event.id}
+                                className="flex flex-col justify-between p-6 bg-white rounded-lg shadow-lg"
+                                data-aos="zoom-in"
+                                data-aos-duration="800"
+                                data-aos-delay="600"
+                            >
+                                <div>
+                                    <img
+                                        src={event.image}
+                                        alt={event.title}
+                                        className="object-cover w-full h-48 rounded-lg"
+                                        data-aos="flip-left"
+                                        data-aos-duration="1000"
+                                    />
+                                    <h4
+                                        className="mt-4 text-xl font-bold text-gray-800"
+                                        data-aos="fade-up"
+                                        data-aos-duration="1000"
+                                        data-aos-delay="200"
+                                    >
+                                        {event.title}
+                                    </h4>
+                                    <p
+                                        className="mt-2 text-gray-600"
+                                        data-aos="fade-up"
+                                    >
+                                        <strong>Date:</strong> {event.date}
+                                    </p>
+                                    <p
+                                        className="mt-1 text-gray-600"
+                                        data-aos="fade-up"
+                                    >
+                                        <strong>Time:</strong> {event.time}
+                                    </p>
+                                    <p
+                                        className="mt-1 text-gray-600"
+                                        data-aos="fade-up"
+                                    >
+                                        <strong>Location:</strong>{" "}
+                                        {event.location}
+                                    </p>
+                                    <p
+                                        className="mt-3 text-gray-600"
+                                        data-aos="fade-up"
+                                    >
+                                        {event.description}
+                                    </p>
+                                </div>
+                                <div className="mt-4">
+                                    <button
+                                        onClick={() =>
+                                            handleRegister(event.title)
+                                        }
+                                        className="w-full px-4 py-2 text-white transition bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                        data-aos="zoom-in"
+                                        data-aos-delay="400"
+                                    >
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Annual report */}
+            <section
+                className="min-h-screen py-16 bg-gray-50"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+                <div className="container px-4 mx-auto max-w-7xl">
+                    <h2
+                        className="text-4xl font-bold text-center text-gray-800 sm:text-5xl"
+                        data-aos="fade-right"
+                        data-aos-duration="1000"
+                    >
+                        Annual Report 2024
+                    </h2>
+                    <p
+                        className="mt-4 text-center text-gray-600"
+                        data-aos="fade-left"
+                        data-aos-duration="1000"
+                        data-aos-delay="200"
+                    >
+                        A glimpse of the incredible journey we’ve had this year
+                        in making a difference.
+                    </p>
+
+                    <div
+                        className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4"
+                        data-aos="zoom-in"
+                        data-aos-duration="1000"
+                        data-aos-delay="400"
+                    >
+                        <div
+                            className="p-6 text-center bg-white rounded-lg shadow-lg"
+                            data-aos="flip-right"
+                        >
+                            <h3 className="text-3xl font-bold text-blue-500">
+                                1200+
+                            </h3>
+                            <p className="mt-2 text-lg text-gray-700">Donors</p>
+                        </div>
+                        <div
+                            className="p-6 text-center bg-white rounded-lg shadow-lg"
+                            data-aos="flip-left"
+                        >
+                            <h3 className="text-3xl font-bold text-cyan-500">
+                                8000+
+                            </h3>
+                            <p className="mt-2 text-lg text-gray-700">
+                                People Helped
+                            </p>
+                        </div>
+                        <div
+                            className="p-6 text-center bg-white rounded-lg shadow-lg"
+                            data-aos="flip-up"
+                        >
+                            <h3 className="text-3xl font-bold text-teal-500">
+                                50+
+                            </h3>
+                            <p className="mt-2 text-lg text-gray-700">
+                                Campaigns
+                            </p>
+                        </div>
+                        <div
+                            className="p-6 text-center bg-white rounded-lg shadow-lg"
+                            data-aos="flip-down"
+                        >
+                            <h3 className="text-3xl font-bold text-indigo-500">
+                                300+
+                            </h3>
+                            <p className="mt-2 text-lg text-gray-700">
+                                Volunteers
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        className="mt-16"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-delay="600"
+                    >
+                        <h3 className="text-2xl font-bold text-center text-gray-800 sm:text-3xl">
+                            Success Highlights
+                        </h3>
+                        <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3">
+                            <div
+                                className="p-6 bg-white rounded-lg shadow-lg"
+                                data-aos="zoom-in"
+                                data-aos-delay="400"
+                            >
+                                <img
+                                    src={dhakaImg}
+                                    alt="Success Story"
+                                    className="object-cover w-full h-48 rounded-lg"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                />
+                                <h4 className="mt-4 text-xl font-bold text-gray-800">
+                                    Helping Communities
+                                </h4>
+                                <p className="mt-2 text-gray-600">
+                                    This year, we distributed over 5,000 warm
+                                    clothes in Dhaka, transforming lives during
+                                    the harsh winter.
+                                </p>
+                            </div>
+                            <div
+                                className="p-6 bg-white rounded-lg shadow-lg"
+                                data-aos="zoom-in"
+                                data-aos-delay="600"
+                            >
+                                <img
+                                    src={ctgImg}
+                                    alt="Success Story"
+                                    className="object-cover w-full h-48 rounded-lg"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                />
+                                <h4 className="mt-4 text-xl font-bold text-gray-800">
+                                    Spreading Warmth
+                                </h4>
+                                <p className="mt-2 text-gray-600">
+                                    Volunteers worked tirelessly to deliver
+                                    3,000 clothing packages to families in need,
+                                    ensuring a warmer winter in Chattogram.
+                                </p>
+                            </div>
+
+                            <div
+                                className="p-6 bg-white rounded-lg shadow-lg"
+                                data-aos="zoom-in"
+                                data-aos-delay="800"
+                            >
+                                <img
+                                    src={rajshahiImg}
+                                    alt="Success Story"
+                                    className="object-cover w-full h-48 rounded-lg"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                />
+                                <h4 className="mt-4 text-xl font-bold text-gray-800">
+                                    Empowering the Youth
+                                </h4>
+                                <p className="mt-2 text-gray-600">
+                                    Over 2,000 students received winter clothing
+                                    and essentials, enabling them to focus on
+                                    their education without the burden of cold
+                                    weather.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
