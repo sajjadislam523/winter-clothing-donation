@@ -54,7 +54,7 @@ const UpcomingEvents = () => {
                 <h2 className="text-3xl font-bold text-center text-gray-800 sm:text-4xl">
                     Upcoming Events
                 </h2>
-                <p className="mt-4 text-center text-gray-600">
+                <p className="my-8 text-center text-gray-600">
                     Join us in making a difference. Check out our upcoming
                     events and register to participate.
                 </p>
